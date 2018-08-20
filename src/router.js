@@ -14,7 +14,7 @@ export default new Router({
 			component: Entry
 		},
 		{
-			path: '/',
+			path: '/home',
 			name: 'home',
 			component: () => import('./views/Home.vue')
 		}
