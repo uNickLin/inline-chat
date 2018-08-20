@@ -1,0 +1,17 @@
+$white: #f7f7f7;
+$black: #393e46;
+$gray: #5c636e;
+$yellow: #f8b500;
+$orange: #f07810;
+
+@mixin flex($ai: center, $jc: center) {
+  display: flex;
+  align-items: $ai;
+  justify-content: $jc;
+}
+
+@mixin bg($size: cover, $position: center center, $repeat: no-repeat) {
+  background-size: $size;
+  background-position: $position;
+  background-repeat: $repeat;
+}

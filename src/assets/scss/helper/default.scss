@@ -1,0 +1,15 @@
+body, html{
+  margin: 0;
+  padding: 0;
+  background: $white;
+}
+
+* > * {
+  box-sizing: border-box;
+}
+
+button{
+  background: none;
+  outline: none;
+  border: 1px solid transparent;
+}
