@@ -2,11 +2,21 @@
 	<div class="messages">
 		<template v-for='(msg, index) in msgList'>
 			<div class="message others" :key='index' v-if='msg.userName !== myName'>
-				<label>{{msg.userName}} : </label>
-				<p>{{msg.message}}</p>
+				<div class="msg-box">
+					<label>{{msg.userName}} : </label>
+					<p>{{msg.message}}</p>
+				</div>
+				<div class="msg-time">
+					<span>{{msg.timeStamp}}</span>
+				</div>
 			</div>
 			<div class="message mine" :key='index' v-else>
-				<p>{{msg.message}}</p>
+				<div class="msg-box">
+					<p>{{msg.message}}</p>
+				</div>
+				<div class="msg-time">
+					<span>{{msg.timeStamp}}</span>
+				</div>
 			</div>
 		</template>
 	</div>

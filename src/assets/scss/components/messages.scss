@@ -3,23 +3,38 @@
   overflow: scroll;
   padding: 10px 0;
   .message{
-    background: $white;
-    border-radius: 5px;
     margin-bottom: 10px;
     width: fit-content;
-    max-width: 300px;
-    padding: 5px 10px;
-    label{
-      font-weight: bold;
+    @include flex(flex-end, flex-start);
+    .msg-box{
+      max-width: 280px;
+      border-radius: 5px;
+      padding: 5px 10px;
+      margin-right: 5px;
+      background: $white;
+      label{
+        font-weight: bold;
+      }
+      p{
+        word-break: break-all;
+      }
     }
-    p{
-      word-break: break-all;
+    .msg-time{
+      font-size: 12px;
     }
     &.mine{
       margin-right: 0;
       margin-left: auto;
-      background: $orange;
-      color: $white;
+      flex-direction: row-reverse;
+      .msg-box{
+        background: $orange;
+        color: $white;
+        margin-right: 0;
+        margin-left: 5px;
+      }
+      .msg-time{
+
+      }
     }
   }
 }
