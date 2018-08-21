@@ -29,7 +29,8 @@ export default {
 	data () {
 		return {
 			msg: '',
-			msgList: []
+			msgList: [],
+			msgsElement: null
 		}
 	},
 	methods: {
@@ -41,7 +42,7 @@ export default {
 			return `${format} ${hours}:${minutes}`
 		},
 		sendMsg (e) {
-			const msgBody = document.querySelector('.chat-box-body')
+			// const msgs = document.querySelector('.messages')
 
 			if (e.shiftKey) {
 				return false
@@ -61,8 +62,8 @@ export default {
 
 			// scroll msgbody to bottom
 			setTimeout(() => {
-				msgBody.scrollTop = msgBody.scrollHeight
-			}, 100)
+				this.msgs.scrollTop = this.msgs.scrollHeight
+			}, 200)
 		}
 	},
 	computed: {
@@ -75,6 +76,9 @@ export default {
 			this.$router.replace('/')
 		}
 
+		this.msgs = document.querySelector('.messages')
+		this.msgs.scrollTop = this.msgs.scrollHeight
+
 		const getData = () => {
 			return new Promise((resolve, reject) => {
 				resolve(
@@ -86,9 +90,19 @@ export default {
 		}
 
 		getData().then(() => {
-			const msgBody = document.querySelector('.chat-box-body')
-			msgBody.scrollTop = msgBody.scrollHeight
+			// const msgs = document.querySelector('.messages')
+			this.msgs.scrollTop = this.msgs.scrollHeight
 		})
+	},
+	watch: {
+		msgList (oldVal, newVal) {
+			// const msgs = document.querySelector('.messages')
+			if (newVal) {
+				setTimeout(() => {
+					this.msgs.scrollTop = this.msgs.scrollHeight
+				}, 200)
+			}
+		}
 	}
 }
 </script>
