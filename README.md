@@ -1,5 +1,7 @@
 # inline-chat
 
+[DEMO](http://inlinechat.unick.tw/)
+
 ## Project setup
 ```
 npm install
